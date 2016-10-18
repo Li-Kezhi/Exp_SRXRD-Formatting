@@ -21,7 +21,7 @@ for line in open(route, 'r'):
     if lineNum >= 2:
         splitting = line.split('\t')
         angle = float(splitting[0])
-        signal = float(splitting[1]) / float(splitting[2])    # divided by initial intensity
-        output.writelines('%9.5f\t%12.8f\n' % (angle, signal))
+        signal = float(splitting[1]) / float(splitting[2]) * 10000   # divided by initial intensity
+        output.writelines('%14.5f\t%17.8f\n' % (angle, signal))
     lineNum += 1
 output.close()
